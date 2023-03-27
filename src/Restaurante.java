@@ -238,7 +238,7 @@ public class Restaurante extends Hosteleria implements NormasRestaurante{
         int indice = -1; // Crea un punto de inicio para el índice del StringBuffer
 
         try {
-            lee = new FileReader("src\\entrantes.txt");
+            lee = new FileReader("src\\menu.txt");
             bufferEntrante = new StringBuffer();
             int caracter = lee.read();
 
@@ -258,78 +258,6 @@ public class Restaurante extends Hosteleria implements NormasRestaurante{
             bufferEntrante.setLength(0);
         }
 
-        lee = null;
-        StringBuffer bufferPrimeros = null;
-        indice = -1;
-
-        try {
-            lee = new FileReader("src\\primeros.txt");
-            bufferPrimeros = new StringBuffer();
-            int caracter = lee.read();
-
-            while (caracter != -1) {
-                indice ++;
-                char imprimir = (char) caracter;
-                bufferPrimeros.insert(indice,imprimir);
-                caracter = lee.read();
-            }
-            lee.close();
-            String primeroText = null;
-            primeroText = String.valueOf(bufferEntrante);
-            System.out.println(bufferPrimeros);
-
-        } catch (IOException e) {
-            System.out.println(e.toString());
-            bufferPrimeros.setLength(0);
-        }
-
-        lee = null;
-        StringBuffer bufferSegundos = null;
-        indice = -1;
-
-        try {
-            lee = new FileReader("src\\segundos.txt");
-            bufferSegundos = new StringBuffer();
-            int caracter = lee.read();
-
-            while (caracter != -1) {
-                indice ++;
-                char imprimir = (char) caracter;
-                bufferSegundos.insert(indice,imprimir);
-                caracter = lee.read();
-            }
-            lee.close();
-            String segundoText = null;
-            segundoText = String.valueOf(bufferEntrante);
-            System.out.println(bufferSegundos);
-
-        } catch (IOException e) {
-            System.out.println(e.toString());
-            bufferSegundos.setLength(0);
-        }
-
-        lee = null;
-        StringBuffer bufferPostres = null;
-        indice = -1;
-
-        try {
-            lee = new FileReader("src\\postres.txt");
-            bufferPostres = new StringBuffer();
-            int caracter = lee.read();
-
-            while (caracter != -1) {
-                indice ++;
-                char imprimir = (char) caracter;
-                bufferPostres.insert(indice,imprimir);
-                caracter = lee.read();
-            }
-            lee.close();
-            System.out.println(bufferPostres);
-
-        } catch (IOException e) {
-            System.out.println(e.toString());
-            bufferPostres.setLength(0);
-        }
     }
 
     @Override
